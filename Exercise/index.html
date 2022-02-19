@@ -1,20 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>HTML Form </title>
 </head>
+
 <body>
-<h3>
-    Form Design Exercise:
-</h3>
-<p style="font-family: Helvetica;font-size: medium">
-    Disregarding the style of the page: <br>
-    <a href="https://forms.gle/qjz8MKR4YXWkWCVLA">https://forms.gle/qjz8MKR4YXWkWCVLA</a>
-</p>
-<p style="font-family: Helvetica;font-size: medium">
-    Try to replicate the format of the form in the page.<br>
-    Make use of "Label", "Input" and "Table".
-</p>
+
+    <form class="form">
+        <h4>
+            Sample Form
+        </h4>
+        <p>
+            Choose a topic, and research interest for the individual visualization project.
+        </p>
+        <hr />
+
+        <h5>JohnDoe@gmail.com</h5>
+        <p class="required">* Required</p>
+        <div class="row">
+            <label>Email*:</label><br>
+            <input type="email" id="" name="email" placeholder="Enter Email" required>
+        </div>
+        <div class="row">
+            <label>Firstname:</label><br>
+            <input type="text" id="f_name" name="f_name" placeholder=" Enter First Name">
+        </div>
+        <div class="row">
+            <label>Lastname:</label><br>
+            <input type="text" id="l_name" name="l_name" placeholder="Enter Last Name">
+        </div>
+        <div class="row">
+            <label>Research Interest*:</label><br>
+            <textarea type="text" id="r_interest" name="r_interest" placeholder="List at least 3" required></textarea>
+        </div>
+        <div class="row">
+            <label>Project Title - (e.g. income vs education US Census)*:</label><br>
+            <input type="text" id="title" name="title" placeholder="Enter Title" required>
+        </div>
+        <div class="row">
+            <label>Top Skills*:</label><br>
+            <div class="checkbox">
+                <input type="checkbox" id="skill" value="sql" required> <label>SQL</label><br>
+
+                <input type="checkbox" id="skill" name="python" required> <label>Python Programming</label><br>
+
+                <input type="checkbox" id="skill" name="matlab" required> <label>Matlab</label><br>
+
+                <input type="checkbox" id="skill" name="javascript" required> <label>D3js and Javascript</label><br>
+
+                <input type="checkbox" id="skill" name="c_VB" required> <label>C# VB.net</label><br>
+
+                <input type="checkbox" id="skill" name="php" required> <label>PHP</label><br>
+
+                <input type="checkbox" id="skill" name="node" required> <label>Node.JS</label><br>
+
+                <input type="checkbox" id="skill" name="tools" required> <label>Web design tools (e.g.
+                    Wordpress)</label><br>
+
+                <input type="checkbox" id="skill" name="html_css" required> <label>HTML and CSS</label><br>
+
+                <input type="checkbox" id="skill" name="excel" required> <label>Excel</label><br>
+
+                <input type="checkbox" id="skill" name="power_bi" required> <label>PowerBI</label><br>
+
+                <input type="checkbox" id="skill" name="tableau" required> <label>Tableau</label><br>
+
+                <input type="checkbox" id="skill" name="option13" required> <label>Option 13</label><br>
+
+                <label>Other: </label><input type="text" id="skill" name="other" required><br>
+            </div>
+        </div>
+        <div class="row">
+            <label>Suggestions or Questions:</label><br>
+            <textarea type="text" id="suggestion" name="suggestion" placeholder="Your Answer"></textarea>
+        </div>
+        <div class="button">
+            <button type="submit" value="submit">Submit</button>
+        </div>
+
+
+    </form>
+
+
 </body>
+
 </html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var requiredCheckboxes = $(':checkbox[required]');
+        requiredCheckboxes.change(function () {
+            if (requiredCheckboxes.is(':checked')) {
+                requiredCheckboxes.removeAttr('required');
+            }
+            else {
+                requiredCheckboxes.attr('required', 'required');
+            }
+        });
+    });
+</script>
+
+
+<style>
+    .required {
+        color: red;
+    }
+
+    .form {
+        text-align: center;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+
+    .row {
+        width: 100%;
+        text-align: left;
+        border: thin solid;
+        padding: 10px;
+    }
+
+    .checkbox {
+        align-items: left;
+    }
+
+    .button {
+        text-align: left;
+        padding: 10px;
+    }
+
+    #suggestion {
+        width: 100%;
+    }
+
+    #r_interest {
+        width: 100%
+    }
+</style>
